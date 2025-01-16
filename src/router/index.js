@@ -16,9 +16,9 @@ const router = createRouter({
       path: '/products',
       name: 'produkter',
       component: ProductView,
-      // meta: {
-      //   requireAuth: true       // Skyddad rutt
-      // }
+      meta: {
+        requireAuth: true       // Skyddad rutt
+      }
     },
     {
       path: '/update-product/:id',
@@ -43,7 +43,7 @@ import axios from 'axios';
 router.beforeEach(async (to, from, next) => {
   if (to.meta.requireAuth) {
     try {
-      const response = await axios.get(`http://localhost:5000/products`, {
+      const response = await axios.get(`https://zoox-privat-backend.onrender.com/products`, {
         withCredentials: true,
       });
 
