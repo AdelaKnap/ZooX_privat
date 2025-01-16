@@ -70,7 +70,7 @@ export default {
         // Hämta produkten utifrån id
         async fetchProduct() {
             try {
-                const response = await axios.get(`http://localhost:5000/products/${this.id}`, {
+                const response = await axios.get(`https://zoox-privat-backend.onrender.com/products/${this.id}`, {
                     withCredentials: true,
                 });
                 const fetchedProduct = response.data;
@@ -88,7 +88,7 @@ export default {
         // Hämta kategorierna
         async fetchCategories() {
             try {
-                const response = await axios.get(`http://localhost:5000/categories`);
+                const response = await axios.get(`https://zoox-privat-backend.onrender.com/categories`);
                 this.categories = response.data;
             } catch (error) {
                 console.error("Kunde inte hämta kategorier:", error.message);
@@ -121,7 +121,7 @@ export default {
                 };
 
                 // PUT -anrop
-                await axios.put(`http://localhost:5000/products/${this.product._id}`, productToUpdate, {
+                await axios.put(`https://zoox-privat-backend.onrender.com/products/${this.product._id}`, productToUpdate, {
                     headers: { "Content-Type": "application/json" },
                     withCredentials: true  
                 });

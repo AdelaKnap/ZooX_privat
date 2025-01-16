@@ -98,7 +98,7 @@ export default {
         async getProducts(categoryId = "") {
             this.isLoading = true;
             try {
-                const url = categoryId ? `http://localhost:5000/products/category/${categoryId}` : `http://localhost:5000/products`;
+                const url = categoryId ? `https://zoox-privat-backend.onrender.com/products/category/${categoryId}` : `http://localhost:5000/products`;
                 const response = await axios.get(url, {
                     withCredentials: true,
                 });
@@ -114,7 +114,7 @@ export default {
         // Hämtar kategorier
         async getCategories() {
             try {
-                const response = await axios.get(`http://localhost:5000/categories`, {
+                const response = await axios.get(`https://zoox-privat-backend.onrender.com/categories`, {
                     withCredentials: true,
                 });
                 this.categories = response.data;
@@ -134,7 +134,7 @@ export default {
 
             if (confirmDelete) {
                 try {
-                    await axios.delete(`http://localhost:5000/products/${productId}`, {
+                    await axios.delete(`https://zoox-privat-backend.onrender.com/products/${productId}`, {
                         withCredentials: true,
                     });
                     this.getProducts(this.selectedCategory);    // Uppdatera efter delete
@@ -158,7 +158,7 @@ export default {
         // Logga ut användaren
         async logoutUser() {
             try {
-                const response = await axios.get(`http://localhost:5000/users/logout`, {
+                const response = await axios.get(`https://zoox-privat-backend.onrender.com/users/logout`, {
                     withCredentials: true,
                 });
 

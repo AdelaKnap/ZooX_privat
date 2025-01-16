@@ -87,7 +87,7 @@ export default {
 
             try {
                 // Post med axios
-                const response = await axios.post("http://localhost:5000/users", user);
+                const response = await axios.post("https://zoox-privat-backend.onrender.com/users", user);
 
                 // Kontroll om statuskod 201, created
                 if (response.status === 201) {

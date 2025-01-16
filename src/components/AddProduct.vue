@@ -69,7 +69,7 @@ export default {
         // Hämta kategorierna
         async getCategories() {
             try {
-                const response = await axios.get(`http://localhost:5000/categories`, {
+                const response = await axios.get(`https://zoox-privat-backend.onrender.com/categories`, {
                     withCredentials: true,
                 });
                 if (response.status === 200) {
@@ -104,7 +104,7 @@ export default {
                     quantity: this.quantity,
                 };
 
-                await axios.post(`http://localhost:5000/products`, productBody, {
+                await axios.post(`https://zoox-privat-backend.onrender.com/products`, productBody, {
                     withCredentials: true,
                 });
 
