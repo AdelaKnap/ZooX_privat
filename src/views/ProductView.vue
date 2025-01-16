@@ -98,7 +98,7 @@ export default {
         async getProducts(categoryId = "") {
             this.isLoading = true;
             try {
-                const url = categoryId ? `https://zoox-privat-backend.onrender.com/products/category/${categoryId}` : `http://localhost:5000/products`;
+                const url = categoryId ? `https://zoox-privat-backend.onrender.com/products/category/${categoryId}` : `https://zoox-privat-backend.onrender.com/products`;
                 const response = await axios.get(url, {
                     withCredentials: true,
                 });
