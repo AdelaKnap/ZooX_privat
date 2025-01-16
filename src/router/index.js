@@ -16,9 +16,9 @@ const router = createRouter({
       path: '/products',
       name: 'produkter',
       component: ProductView,
-      meta: {
-        requireAuth: true       // Skyddad rutt
-      }
+      // meta: {
+      //   requireAuth: true       // Skyddad rutt
+      // }
     },
     {
       path: '/update-product/:id',
