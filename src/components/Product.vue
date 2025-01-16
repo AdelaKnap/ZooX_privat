@@ -48,7 +48,7 @@ export default {
             try {
                 const updates = { quantity: this.quantity };
 
-                await axios.patch(`https://zoox-privat-backend.onrender.com/${this.product._id}`, updates, {
+                await axios.patch(`https://zoox-privat-backend.onrender.com/products/${this.product._id}`, updates, {
                     withCredentials: true,
                 });
 
