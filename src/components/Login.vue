@@ -25,6 +25,14 @@
         </form>
     </div>
 
+    <!-- Laddningsmeddelande plus ikon som visas innan hämtningen från servern är klar -->
+    <div v-if="isLoading" class="loading text-center">
+        <p>Du loggas in...</p>
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
 </template>
 
 <script>
@@ -38,6 +46,7 @@ export default {
             username: "",
             password: "",
             error: null,
+            isLoading: true,   // Laddningsikon för inlogg
         };
     },
     methods: {
@@ -53,6 +62,8 @@ export default {
                 this.error = "Du måste ange användarnamn och lösenord.";
                 return;
             }
+            
+            this.isLoading = true;
 
             try {
                 // Post med axios
@@ -73,6 +84,8 @@ export default {
                 } else {
                     console.error("Ett fel inträffade:", error);
                 }
+            } finally {
+                this.isLoading = false;
             }
         },
     },
