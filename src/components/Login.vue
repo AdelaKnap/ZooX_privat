@@ -46,7 +46,7 @@ export default {
             username: "",
             password: "",
             error: null,
-            isLoading: true,   // Laddningsikon för inlogg
+            isLoading: false,   // Laddningsikon för inlogg
         };
     },
     methods: {
