@@ -21,7 +21,7 @@ POST /users - Lägger till en ny användare.
 POST /users/login - Loggar in användare.
 
 # Länk till webbplatsen
-Länk till webbplatsen: 
+Länk till webbplatsen: https://zoox.netlify.app/
 
 ## Skapad av:
 Adela Knap adkn2300@student.miun.se
